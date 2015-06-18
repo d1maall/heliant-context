@@ -755,11 +755,10 @@ body
   z-index: 99
 
 .position-fixed
+  @include transform(translateZ(0))
+  @include transform(translate3d(0, 0, 0))
   @include transition(top 700ms ease)
   top: 0
-  //@include transform(rotate(0.01deg))
-  @include transform(translate3d(0,0,0))
-  //display: block
   z-index: 99
   //position: absolute
   position: fixed
@@ -860,9 +859,9 @@ body
 
 .ten-container-title
   position: absolute
+  @include transform(translateZ(0))
+  @include transform(translate3d(0, 0, 0))
   @include transition(top 700ms ease)
-  //@include transform(rotate(0.01deg))
-  @include transform(translate3d(0,0,0))
   top: 100%
   //display: none
   .six-title
@@ -875,19 +874,18 @@ body
 
 .ten-container-title-up
   position: absolute
-  //transition: 0.7s ease-in-out
+  @include transform(translateZ(0))
+  @include transform(translate3d(0, 0, 0))
   @include transition(top 700ms ease)
-  //@include transform(rotate(0.01deg))
-  @include transform(translate3d(0,0,0))
   top: -100%
   width: 100%
   z-index: 98
 
 .ten-container-title-fixed
+  @include transform(translateZ(0))
+  @include transform(translate3d(0, 0, 0))
   @include transition(top 700ms ease)
   top: 0
-  //@include transform(rotate(0.01deg))
-  @include transform(translate3d(0,0,0))
   //display: block
   z-index: 98
   //position: absolute
