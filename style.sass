@@ -28,6 +28,8 @@ $title-font-size: 1.5em
   background: -webkit-linear-gradient(transparent 0%, transparent 0%), -webkit-linear-gradient(-45deg, $color 33.33%, transparent 33.33%) 0 0%, transparent -webkit-linear-gradient(-135deg, $color 33.33%, transparent 33.33%) 0 0%
 
 =stripes($color)
+  @include transform(translateZ(0))
+  @include transform(translate3d(0, 0, 0))
   .stripes
     margin-top: -7px
     +drop-shadow(0.1)
@@ -45,6 +47,8 @@ $title-font-size: 1.5em
       background-size: 0px 100%, 15px 27px, 15px 27px
 
 =title($text-color, $backgroud-color)
+  @include transform(translateZ(0))
+  @include transform(translate3d(0, 0, 0))
   width: 100%
   text-align: center
   color: $text-color
@@ -471,8 +475,12 @@ body
       font-weight: 300
       padding-bottom: 45px
       a
-        text-decoration: underline dashed
+        //text-decoration: underline dashed
+        border-bottom: 1px dashed blue
         color: blue
+        &:hover
+          text-decoration: none
+          border-bottom: 1px solid blue
   +button(40%,30%)
   +stripes($blue)
 
@@ -723,9 +731,10 @@ body
 
 .six-container-title
   position: absolute
+  @include transform(translateZ(0))
+  @include transform(translate3d(0, 0, 0))
   @include transition(top 700ms ease)
-  //@include transform(rotate(0.01deg))
-  @include transform(translate3d(0,0,0))
+  //@include transform(translateZ(0))
   top: 100%
   //display: none
   .six-title
@@ -737,9 +746,10 @@ body
 .six-container-title-up
   position: absolute
   //transition: 0.7s ease-in-out
+  @include transform(translateZ(0))
+  @include transform(translate3d(0, 0, 0))
   @include transition(top 700ms ease)
   //@include transform(rotate(0.01deg))
-  @include transform(translate3d(0,0,0))
   top: -100%
   width: 100%
   z-index: 99
