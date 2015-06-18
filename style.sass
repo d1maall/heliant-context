@@ -9,7 +9,15 @@ $light-gray: #999999
 $gray: #505050
 $title-font-size: 1.5em
 
+.digit
+  font-family: "Helvetica Neue", Arial, serif
+  font-weight: 100
 
+.phone
+  font-weight: 300
+
+.sticker-digit
+  font-weight: 200
 
 =drop-shadow($opacity)
   filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, $opacity))
@@ -462,6 +470,9 @@ body
       margin-right: 10%
       font-weight: 300
       padding-bottom: 45px
+      a
+        text-decoration: underline dashed
+        color: blue
   +button(40%,30%)
   +stripes($blue)
 
@@ -642,6 +653,11 @@ body
 
 
 .twelve
+  background-color: #fff
+  background-image: url("img/map1.png")
+  background-position: right
+  background-repeat: no-repeat
+  background-size: cover
   &:after
     content: ""
     background-color: $blue
@@ -653,30 +669,40 @@ body
     right: 0
     position: absolute
     z-index: -1
-  .twelve-title
-    +title($blue,$white)
-  +stripes($white)
+  .twelve-title-container
+    position: absolute
+    z-index: 10
+    width: 100%
+    .twelve-title
+      +title($white,$blue)
+    +stripes($blue)
   .twelve-form
     position: absolute
     width: 50%
-    margin-left: 25%
+    //margin-left: 25%
+    height: 100%
     background-color: #fff
-    h3
-      margin-top: 0
-      padding-top: 25px
-      font-size: 2em
-      text-align: center
-      color: $gray
-      font-weight: 100
     +shadow
-    +button(50%,25%)
-    input
-      width: 75%
-      margin-left: 12.5%
-      display: block
-      color: $light-gray
-      font-size: 1.5em
-      font-weight: 100
+    .container
+      margin-top: 50%
+      @include transform(translateY(-55%))
+      width: 100%
+      h3
+        margin-top: 30%
+        padding-top: 25px
+        font-size: 2em
+        text-align: center
+        color: $gray
+        font-weight: 100
+      +button(60%,20%)
+      input
+        width: 75%
+        margin-left: 12.5%
+        display: block
+        color: $light-gray
+        font-size: 1.5em
+        font-weight: 100
+
 .thirteen
   background-color: #fff
   .thirteen-title
@@ -859,3 +885,12 @@ body
   left: 0
   //margin-top: 0
   width: 100%
+
+.white-popup-block
+  position: relative
+  background: #FFF
+  padding: 20px
+  width: auto
+  max-width: 500px
+  margin: 20px auto
+  +button(75%, 12.5%)

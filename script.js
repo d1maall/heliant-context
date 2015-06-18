@@ -103,12 +103,17 @@ $(document).ready(function() {
                 autoplaySpeed: 1000
             });
 
-            var mytwelvescreen = $(".twelve").height();
+            $('.popup-with-form').magnificPopup({
+                type: 'inline',
+                preloader: false
+            });
+
+            /*var mytwelvescreen = $(".twelve").height();
             var mytwelveform = $(".twelve-form").height();
             var mytitle = $(".twelve-title").height();
             var mystripes = $(".stripes").height();
             var mt = (mytwelvescreen-mytwelveform - mytitle - mystripes)/2;
-            $(".twelve-form").css("bottom", mt);
+            $(".twelve-form").css("bottom", mt);*/
 
             var my13screen = $(".thirteen").height();
             var my13contacts = $(".contactus").height();
