@@ -126,10 +126,10 @@ body
 
 .head
   position: absolute
-  //background: url("img/bg7.jpg")
-  //background-position: top
-  //background-repeat: no-repeat
-  //background-size: cover
+  background: url("img/main.jpg")
+  background-position: top
+  background-repeat: no-repeat
+  background-size: cover
   height: 100%
   width: 100%
 
@@ -473,7 +473,7 @@ body
       margin-left: 10%
       margin-right: 10%
       font-weight: 300
-      padding-bottom: 45px
+      //padding-bottom: 45px
       a
         //text-decoration: underline dashed
         border-bottom: 1px dashed blue
@@ -509,12 +509,12 @@ body
     position: relative
     top: 135px
   .s678-title
-    padding-top: 21px
-    padding-bottom: 21px
+    padding-top: 115px
+    padding-bottom: 20px
     //+title($gray,transparent)
     font-size: 3em
     font-weight: 100
-    text-align: center
+    text-align: left
     color: $gray
   h3
     margin: 0 0
@@ -527,16 +527,25 @@ body
     font-weight: 200
     font-size: 1.2em
     margin-top: 0
+    margin-bottom: 0
   ul
-    margin-top: 21px
+    list-style: none
+    margin-top: 15px
     font-weight: 200
-    font-size: 1em
-    margin-left: 25px
+    font-size: 1.2em
+    margin-left: 15px
     padding-right: 30px
+    li
+      padding-bottom: 10px
+      &:before
+        color: $blue /* Цвет маркера */
+        content: "—" /* Сам маркер */
+        padding-right: 10px /* Расстояние от маркера до текста */
 
-  +button(70%,15%)
+
+
+  +button(70%,5%)
   .btn-678
-    position: absolute
     bottom: 21px
     margin-bottom: 0
   .s678-block-pic
