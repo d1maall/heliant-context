@@ -19,6 +19,9 @@ $title-font-size: 1.5em
 .sticker-digit
   font-weight: 200
 
+.bold-digit
+  font-weight: 200
+
 =drop-shadow($opacity)
   filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, $opacity))
   -webkit-filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, $opacity))
@@ -566,30 +569,30 @@ body
   .nine-title
     +title($blue,$white)
   +stripes($white)
-  .autoplay
-    margin-top: 120px
-    margin-left: 55px
-    margin-right: 55px
-  .div
+  .nine-block
     background-color: $white
-    width: 300px
-    height: 200px
-    margin-left: 15px
-    margin-right: 15px
+    margin-bottom: 30px
+    //padding-top: 9%
+    //padding-bottom: 7%
+    font-family: "Raleway Cyr", sans-serif
+    @include border-top-radius(5px)
+    @include border-bottom-radius(5px)
     +shadow
     img
-      position: relative
+      height: 40px
+      text-align: center
+      //margin-left: 25%
+      //margin-top: -6px
       left: 50%
-      top: 50%
-      @include transform(translateX(-50%) translateY(-50%))
-      height: 33px
-
+      @include transform(translateX(-50%))
+      position: relative
     p
       text-align: center
-      font-size: 1.2em
+      margin-left: 10%
+      margin-right: 10%
       font-weight: 200
-      position: relative
-      top: 50%
+      font-size: 1.5em
+      margin-bottom: 10px!important
   +button(30%,35%)
   .slick-next, .slick-prev
     display: none!important
