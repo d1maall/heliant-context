@@ -18,36 +18,36 @@ $(document).ready(function() {
             var w = $(".calc-block").width();
 
             $('.slider1').jRange({
-                from: 15000,
-                to: 250000,
-                step: 5000,
-                scale: ["15&nbsp;000&nbsp;р.","250&nbsp;000&nbsp;р."],
+                from: 10,
+                to: 200,
+                step: 1,
+                scale: ["10 шт.","200шт."],
+                format: "%s шт.",
+                width: w-100,
+                showLabels: false,
+                theme: "theme-blue",
+                onstatechange: function(){
+                    $(".res").html($(".slider1").val() + " шт.");
+                    $(".i-result").html($(".slider1").val() + " шт.");
+                    $(".chart").css("height", $(".slider1").val()/1000);
+                    $(".chart-right").css("height", ($(".slider1").val() * $(".slider2").val())/100000);
+                    $(".res-right").html(($(".slider1").val()*$(".slider2").val())/100 + " шт.");
+                    //($(".slider1").val());
+                }
+            });
+            $('.slider2').jRange({
+                from: 3000,
+                to: 10000,
+                step: 10,
+                scale: ["3000 руб.","10000 руб."],
                 format: "%s рублей",
                 width: w-100,
                 showLabels: false,
                 theme: "theme-blue",
                 onstatechange: function(){
-                    $(".res").html($(".slider1").val() + " руб.");
-                    $(".i-result").html($(".slider1").val() + " руб.");
-                    $(".chart").css("height", $(".slider1").val()/1000);
-                    $(".chart-right").css("height", ($(".slider1").val() * $(".slider2").val())/100000);
-                    $(".res-right").html(($(".slider1").val()*$(".slider2").val())/100 + " руб.");
-                    //($(".slider1").val());
-                }
-            });
-            $('.slider2').jRange({
-                from: 0,
-                to: 100,
-                step: 1,
-                scale: ["0%","25%","50%","75%","100%"],
-                format: '%s%',
-                width: w-100,
-                showLabels: false,
-                theme: "theme-blue",
-                onstatechange: function(){
                     $(".res-right").html(($(".slider1").val()*$(".slider2").val())/100 + " руб.");
                     $(".chart-right").css("height", ($(".slider1").val() * $(".slider2").val())/100000);
-                    $(".vc-result").html($(".slider2").val() + "%");
+                    $(".vc-result").html($(".slider2").val() + " руб.");
                 }
             });
             $('.slider3').jRange({
